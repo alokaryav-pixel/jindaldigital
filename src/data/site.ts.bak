@@ -3,7 +3,7 @@
 export const site = {
   brand: {
     name: "",
-    fullName: "",
+    fullName: "Jindal Digital Infrastructure",
     mark: "◇",
     tagline: "Infrastructure for the intelligence era.",
     description:
