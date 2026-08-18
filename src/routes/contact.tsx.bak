@@ -18,10 +18,10 @@ export const Route = createFileRoute("/contact")({
 });
 
 const channels = [
-  { label: "Capacity & sales", value: "capacity@jindaldigital.com" },
-  { label: "Partnerships", value: "partners@jindaldigital.com" },
-  { label: "Press", value: "press@jindaldigital.com" },
-  { label: "Investors", value: "investors@jindaldigital.com" },
+  { label: "Capacity & sales", value: "capacity@jdi.com" },
+  { label: "Partnerships", value: "partners@jdi.com" },
+  { label: "Press", value: "press@jdi.com" },
+  { label: "Investors", value: "investors@jdi.com" },
 ] as const;
 
 function Contact() {
@@ -93,7 +93,7 @@ function Contact() {
                   Phone: +91 11 45020000-10<br />
                   Phone: +91 11 25228608-9<br />
                   Fax: +91 11 25227023<br />
-                  Email: info@jindaldigital.com<br />
+                  Email: info@jdi.com<br />
                 </p>
               </div>
               <div className="pt-8 border-t border-hairline">
