@@ -304,6 +304,17 @@ export const leadership = [
     focus: "Group strategy, capital allocation, and long-term vision for the infrastructure platform.",
     initials: "NJ",
   },
+  
+  import neerajPhoto from "@/assets/leadership/Neeraj.jpg";
+{
+  name: "Neeraj Jindal",
+  role: "Chairman",
+  focus: "...",
+  initials: "NJ",
+  photo: neerajPhoto,
+}
+You can keep 
+  
   {
     name: "Alok Verma",
     role: "President & CEO",
