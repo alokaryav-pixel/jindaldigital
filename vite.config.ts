@@ -12,4 +12,6 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Lovable sandbox still pins Cloudflare. On Vercel this selects the Vercel Nitro output.
+  nitro: { preset: "vercel" },
 });
