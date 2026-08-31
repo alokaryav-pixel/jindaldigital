@@ -3,6 +3,7 @@ import { Section, SectionHeader } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { CTASection } from "@/components/site/CTASection";
 import { Timeline } from "@/components/site/Timeline";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { principles, leadership } from "@/data/site";
 
 export const Route = createFileRoute("/about")({
@@ -83,22 +84,7 @@ function About() {
             <Reveal key={person.role} delay={i * 0.04}>
               <div className="card-surface h-full p-8 flex flex-col gap-5 transition-colors duration-500 hover:border-primary/40">
                 <div className="flex items-center gap-4">
-                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full border border-hairline bg-secondary/40">
-                    {person.photo ? (
-                      <img
-                        src={person.photo}
-                        alt={person.name}
-                        className="h-full w-full object-cover object-top"
-                      />
-                    ) : (
-                      <div
-                        className="flex h-full w-full items-center justify-center font-mono text-sm text-primary/80"
-                        aria-hidden
-                      >
-                        {person.initials}
-                      </div>
-                    )}
-                  </div>
+                  <LeaderAvatar person={person} />
                   <div>
                     <div className="font-display text-xl tracking-tight text-foreground">{person.name}</div>
                     <div className="eyebrow text-primary/80 text-[0.65rem] mt-1">{person.role}</div>
@@ -113,6 +99,56 @@ function About() {
 
       <CTASection title="Partner with the team building the foundation." />
     </>
+  );
+}
+
+function LeaderAvatar({ person }: { person: (typeof leadership)[number] }) {
+  const avatar = (
+    <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full border border-hairline bg-secondary/40">
+      {person.photo ? (
+        <img
+          src={person.photo}
+          alt=""
+          className="h-full w-full object-cover object-top"
+        />
+      ) : (
+        <div
+          className="flex h-full w-full items-center justify-center font-mono text-sm text-primary/80"
+          aria-hidden
+        >
+          {person.initials}
+        </div>
+      )}
+    </div>
+  );
+
+  if (!person.photo) return avatar;
+
+  return (
+    <HoverCard openDelay={120} closeDelay={80}>
+      <HoverCardTrigger asChild>
+        <button
+          type="button"
+          aria-label={`View full photo of ${person.name}`}
+          className="rounded-full outline-none ring-offset-background transition-transform duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary/60"
+        >
+          {avatar}
+        </button>
+      </HoverCardTrigger>
+      <HoverCardContent
+        side="top"
+        align="start"
+        sideOffset={10}
+        collisionPadding={16}
+        className="w-auto overflow-hidden border-hairline bg-background p-2 shadow-xl"
+      >
+        <img
+          src={person.photo}
+          alt={person.name}
+          className="h-72 w-auto max-h-[70vh] max-w-[min(18rem,80vw)] rounded-md object-contain"
+        />
+      </HoverCardContent>
+    </HoverCard>
   );
 }
 
