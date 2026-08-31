@@ -76,7 +76,7 @@ function About() {
         <SectionHeader
           eyebrow="Leadership"
           title="The team behind the build."
-          kicker="Core Team"
+          kicker="Placeholder profiles — names, bios and portraits to be finalized."
         />
         <div className="mt-20 container-x grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {leadership.map((person, i) => (
