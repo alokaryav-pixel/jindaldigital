@@ -303,6 +303,7 @@ export const leadership = [
     role: "Chairman",
     focus: "Group strategy, capital allocation, and long-term vision for the infrastructure platform.",
     initials: "NJ",
+    photo: neerajPhoto,
   },
   
   import neerajPhoto from "@/assets/leadership/Neeraj.jpg";
@@ -313,7 +314,7 @@ export const leadership = [
   initials: "NJ",
   photo: neerajPhoto,
 }
-You can keep 
+
   
   {
     name: "Alok Verma",

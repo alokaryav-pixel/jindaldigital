@@ -3,7 +3,7 @@
 export const site = {
   brand: {
     name: "",
-    fullName: "Jindal Digital Infrastructure",
+    fullName: "",
     mark: "◇",
     tagline: "Infrastructure for the intelligence era.",
     description:
@@ -303,19 +303,7 @@ export const leadership = [
     role: "Chairman",
     focus: "Group strategy, capital allocation, and long-term vision for the infrastructure platform.",
     initials: "NJ",
-    photo: neerajPhoto,
   },
-  
-  import neerajPhoto from "@/assets/leadership/Neeraj.jpg";
-{
-  name: "Neeraj Jindal",
-  role: "Chairman",
-  focus: "...",
-  initials: "NJ",
-  photo: neerajPhoto,
-}
-
-  
   {
     name: "Alok Verma",
     role: "President & CEO",

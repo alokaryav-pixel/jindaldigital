@@ -306,7 +306,7 @@ export const leadership = [
   },
   {
     name: "Alok Verma",
-    role: "President & CEO",
+    role: "President",
     focus: "Company direction, customer partnerships, and the path from data centers to AI cloud.",
     initials: "AV",
   },
