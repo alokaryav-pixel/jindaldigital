@@ -83,8 +83,21 @@ function About() {
             <Reveal key={person.role} delay={i * 0.04}>
               <div className="card-surface h-full p-8 flex flex-col gap-5 transition-colors duration-500 hover:border-primary/40">
                 <div className="flex items-center gap-4">
-                  <div className="h-14 w-14 rounded-full border border-hairline bg-secondary/40 flex items-center justify-center font-mono text-sm text-primary/80">
-                    {person.initials}
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full border border-hairline bg-secondary/40">
+                    {person.photo ? (
+                      <img
+                        src={person.photo}
+                        alt={person.name}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    ) : (
+                      <div
+                        className="flex h-full w-full items-center justify-center font-mono text-sm text-primary/80"
+                        aria-hidden
+                      >
+                        {person.initials}
+                      </div>
+                    )}
                   </div>
                   <div>
                     <div className="font-display text-xl tracking-tight text-foreground">{person.name}</div>

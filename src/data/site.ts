@@ -1,5 +1,10 @@
 // Centralized content — all copy lives here, easy to swap later.
 
+import photoNeeraj from "@/assets/Leadership/Neeraj.jpeg";
+import photoAlok from "@/assets/Leadership/Alok.jpeg";
+import photoShivam from "@/assets/Leadership/Shivam.jpeg";
+import photoAbhishek from "@/assets/Leadership/Abhishek.jpeg";
+
 export const site = {
   brand: {
     name: "",
@@ -296,31 +301,41 @@ export const principles = [
   },
 ] as const;
 
-// Placeholder leadership team — swap names, bios and photos when finalized.
-export const leadership = [
+// Leadership team — drop a JPEG into src/assets/Leadership and set `photo` to show it in the avatar.
+export const leadership: {
+  name: string;
+  role: string;
+  focus: string;
+  initials: string;
+  photo?: string;
+}[] = [
   {
     name: "Neeraj Jindal",
     role: "Chairman",
     focus: "Group strategy, capital allocation, and long-term vision for the infrastructure platform.",
     initials: "NJ",
+    photo: photoNeeraj,
   },
   {
     name: "Alok Verma",
     role: "President",
     focus: "Company direction, customer partnerships, and the path from data centers to AI cloud.",
     initials: "AV",
+    photo: photoAlok,
   },
   {
     name: "Shivam Jindal",
     role: "Director, Finance & Operations",
     focus: "Project finance, Delivery, critical facilities operations, and service reliability across every region.",
     initials: "SJ",
+    photo: photoShivam,
   },
   {
     name: "Abhishek Verma",
     role: "Director, Government Affairs",
     focus: "Manage government engagements, regulatory interactions, statutory approvals, and policy-related matters across relevant ministries and authorities.",
     initials: "ABV",
+    photo: photoAbhishek,
   },
   {
     name: "Anuj Jain",
@@ -328,4 +343,4 @@ export const leadership = [
     focus: "Business Development, customer partnership, operations, sacle and growth.",
     initials: "AJ",
   },
-] as const;
+];
