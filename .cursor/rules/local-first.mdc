@@ -1,0 +1,13 @@
+---
+description: Develop and preview on localhost; never push to GitHub unless the user explicitly asks.
+alwaysApply: true
+---
+
+# Local-first development
+
+This repo is the local working copy. GitHub `main` (and Lovable) is the live site.
+
+- Make all changes in this workspace. Preview with `npm run dev` (usually http://localhost:8080).
+- Commit locally when asked. Do **not** `git push` unless the user explicitly asks to publish.
+- A push to `origin/main` updates the live site. Never force-push, rebase, or rewrite published history.
+- Verify UI changes on localhost before considering the work done.
