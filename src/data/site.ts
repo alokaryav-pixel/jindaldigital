@@ -4,6 +4,7 @@ import photoNeeraj from "@/assets/Leadership/Neeraj.jpeg";
 import photoAlok from "@/assets/Leadership/Alok.jpeg";
 import photoShivam from "@/assets/Leadership/Shivam.jpeg";
 import photoAbhishek from "@/assets/Leadership/Abhishek.jpeg";
+import photoAnuj from "@/assets/Leadership/Anuj.jpeg";
 
 export const site = {
   brand: {
@@ -342,5 +343,6 @@ export const leadership: {
     role: "Director, Business Development",
     focus: "Business Development, customer partnership, operations, sacle and growth.",
     initials: "AJ",
+    photo: photoAnuj,
   },
 ];
