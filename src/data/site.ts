@@ -332,7 +332,7 @@ export const leadership: {
     photo: photoShivam,
   },
   {
-    name: "Abhishek Verma",
+    name: "Abhishek Kumar",
     role: "Director, Government Affairs",
     focus: "Manage government engagements, regulatory interactions, statutory approvals, and policy-related matters across relevant ministries and authorities.",
     initials: "ABV",
