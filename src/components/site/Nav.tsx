@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 import { CTAButton } from "./CTAButton";
+import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import jdiMark from "@/assets/jdi-logo.png";
@@ -66,7 +67,8 @@ export function Nav() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-5">
+          <ThemeToggle />
           <CTAButton to="/contact" variant="outline">
             Contact
           </CTAButton>
@@ -100,7 +102,8 @@ export function Nav() {
                   {n.label}
                 </Link>
               ))}
-              <div className="mt-6">
+              <div className="mt-6 flex flex-col gap-5">
+                <ThemeToggle />
                 <CTAButton to="/contact">Contact</CTAButton>
               </div>
             </nav>

@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { ThemeProvider, themeBootScript } from "@/lib/theme";
 
 function NotFoundComponent() {
   return (
@@ -120,9 +121,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
       <body className="grain">
         {children}
@@ -137,11 +139,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Nav />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <ThemeProvider>
+        <Nav />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

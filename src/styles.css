@@ -54,13 +54,15 @@
 
 :root {
   --radius: 0.5rem;
+  color-scheme: dark;
 
-  /* Deep obsidian, cool blue undertone */
+  /* Deep obsidian, cool blue undertone (default) */
   --background: oklch(0.145 0.012 260);
   --foreground: oklch(0.97 0.005 250);
   --surface: oklch(0.185 0.014 260);
   --surface-2: oklch(0.22 0.015 260);
   --hairline: oklch(1 0 0 / 0.08);
+  --grain-dot: oklch(1 0 0 / 0.04);
 
   --card: oklch(0.185 0.014 260);
   --card-foreground: oklch(0.97 0.005 250);
@@ -85,6 +87,39 @@
   --ring: oklch(0.86 0.15 195 / 0.5);
 }
 
+/* Light theme — toggled via html.light */
+html.light {
+  color-scheme: light;
+
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.2 0.02 260);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.96 0.006 250);
+  --hairline: oklch(0.2 0.02 260 / 0.1);
+  --grain-dot: oklch(0.2 0.02 260 / 0.045);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 260);
+
+  --primary: oklch(0.52 0.11 195);
+  --primary-foreground: oklch(0.99 0.01 195);
+  --glow: oklch(0.55 0.12 195);
+
+  --secondary: oklch(0.94 0.01 250);
+  --secondary-foreground: oklch(0.25 0.02 260);
+  --muted: oklch(0.95 0.008 250);
+  --muted-foreground: oklch(0.45 0.02 255);
+  --accent: oklch(0.94 0.015 250);
+  --accent-foreground: oklch(0.22 0.02 260);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.2 0.02 260 / 0.12);
+  --input: oklch(0.2 0.02 260 / 0.14);
+  --ring: oklch(0.52 0.11 195 / 0.45);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -103,6 +138,7 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     letter-spacing: -0.01em;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
 
   ::selection {
@@ -146,7 +182,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background-image: radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.04) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, var(--grain-dot) 1px, transparent 0);
     background-size: 24px 24px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
